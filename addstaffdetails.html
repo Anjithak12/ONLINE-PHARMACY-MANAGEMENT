@@ -1,0 +1,85 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+{#    <style>#}
+{#    input [type=text],select {#}
+{#        width:60%;#}
+{#        padding: 12px 20px;#}
+{#        margin:8px 0;#}
+{#        display:inline-block;#}
+{#        border:1px solid #ccc;#}
+{#        border-radius:4px;#}
+{#        box-sizing: border-box;#}
+{##}
+{#    }#}
+    {#input[type=submit] {#}
+    {#    width: 100%;#}
+    {#    background-color: white;#}
+    {#    padding: 14px 20px;#}
+    {#    margin: 8px 0;#}
+    {#    border: none;#}
+    {#    border-radius: 4px;#}
+    {#    cursor: pointer;#}
+{#    </style>#}
+	<form method="post">
+    {% csrf_token %}
+
+        <h1 align="center" style='font-family: "Times New Roman";color: black;font-size: xx-large'><b><strong>STAFF</strong></b></h1>
+<table align="center" style="color:black;font-family: Times New Roman;font-size: large;font-size: larger">
+	<tr>
+		<th>STAFF NAME</th>
+		<td>
+			<input type="text" name="StaffName" placeholder="StaffName" class="form-control" required><br>
+		</td>
+	</tr>
+    <tr><tr>
+		<th> CATEGORY</th>
+		<td>
+			<select name ="Category" class="form-control" required>
+				
+		        <option value="Pharmacist">Pharmacist</option>	
+				<option value="Delivery Boy">Delivery Boy</option>
+
+		</select><br>
+	</td>
+</tr></tr>
+
+    <tr><tr>
+		<th>ADDRESS</th>
+		<td>
+			<input type="text" name="Address" placeholder="Address" class="form-control" required><br>
+		</td>
+	</tr></tr>
+	<tr><tr>
+		<th>CONTACT NUMBER</th>
+		<td>
+			<input type="text" name="ContactNumber" placeholder="Contact Number"class="form-control"required ><br>
+		</td>
+	</tr></tr>
+	<tr><tr>
+		<th>EMAIL_ID</th>
+		<td>
+			<input type="text" name="Email_id" placeholder="Email id"class="form-control" required><br>
+		</td>
+	</tr></tr>
+	<tr><tr>
+		<th>SALARY</th>
+		<td>
+			<input type="text" name="Salary" placeholder="Salary" class="form-control" required><br>
+		</td>
+	</tr></tr>
+	<tr><tr>
+		<th>JOINING DATE</th>
+		<td>
+			<input type="date" name="JoiningDate" placeholder="Joining Date"class="form-control" required><br>
+		</td>
+	</tr></tr>
+<tr><tr>
+		<td></td>
+		<td><input type="submit" name="" value="Save" class="btn btn-success" required></td>
+	</tr></tr>
+	</table>
+
+</form>
+{% endblock %}
+
+

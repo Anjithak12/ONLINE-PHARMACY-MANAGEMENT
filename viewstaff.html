@@ -1,0 +1,34 @@
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+
+<form method ="post">
+<h1 align="center" style='font-family: "Times New Roman";color: black;'><b>STAFF </b></h1>
+	<table align="center"style="column-rule-style: ridge;color: black" class="table-bordered"bgcolor="#f08080">
+		<tr>
+            <th style="color:darkred"><strong> NAME</strong></th>
+            <th style="color: darkred"><strong>CATEGORY</strong></th>
+            <th style="color: darkred"><strong> ADDRESS</strong></th>
+            <th style="color: darkred"><strong> CONTACT NUMBER</strong></th>
+            <th style="color: darkred"><strong> EMAIL</strong></th>
+            <th style="color: darkred"><strong> SALARY</strong></th>
+            <th style="color: darkred"><strong> JOINING DATE</strong></th>
+		</tr>
+         {% if objval %}
+        {% for obj in objval %}
+        <tr>
+            <td><b><strong> {{ obj.name }}</strong></b></td>
+            <td><b><strong>{{ obj.category }}</strong></b></td>
+            <td><b><strong>{{ obj.address }}</strong></b></td>
+            <td><b><strong>{{ obj.contactnumber }}</strong></b></td>
+            <td><b><strong>{{ obj.email }}</strong></b></td>
+            <td><b><strong>{{ obj.salary }}</strong></b></td>
+            <td><b><strong>{{ obj.joiningdate }}</strong></b></td>
+
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+	</table>
+</form>
+{% endblock %}
