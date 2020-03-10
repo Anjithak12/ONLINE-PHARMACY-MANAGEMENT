@@ -1,0 +1,49 @@
+{% extends 'temp/index.html' %}
+{% block base %}
+	<form method="post">
+    {% csrf_token %}
+
+{#        <h4 align="center"  style="color: black;font-family:Times New Roman"><b><strong><u>Registration</u></strong></b></h4>#}
+<table align="center" style="color:black;font-family: Times New Roman">
+<tr></tr>
+	<tr>
+        <th><strong>NAME</strong></th>
+		<td>
+			<input type="text" name="name" placeholder="Enter your name" required class="form-control"><br>
+		</td>
+	</tr>
+	<tr><tr>
+    <th><strong>EMAIL ID</strong></th>
+		<td>
+			<input type="text" name="Emailid" placeholder="Enter your Email id" required class="form-control"><br>
+		</td>
+	</tr></tr>
+	<tr>
+        <th><strong>PHONE NUMBER</strong></th>
+		<td>
+			<input type="text" name="PhoneNumber" placeholder="Enter your Phone Number" required class="form-control"><br>
+		</td>
+	</tr>
+
+
+	<tr>
+        <th><strong>PASSWORD</strong></th>
+		<td>
+			<input type="password" name="password" placeholder="Enter your password" required class="form-control"><br>
+		</td>
+	</tr>
+	<tr>
+        <th><strong>CONFIRM PASSWORD</strong></th>
+		<td>
+			<input type="password" name=" confirm password" placeholder="Enter your confirm password" required class="form-control"><br>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="" value="Register" class=" btn btn-success"></td>
+	</tr>
+
+	</table>
+
+</form>
+{% endblock %}
