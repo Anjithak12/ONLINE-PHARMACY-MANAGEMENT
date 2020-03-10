@@ -1,0 +1,29 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+	<form method="post">
+ {% csrf_token %}
+
+	<h1 align="center"  style="color:#171a1d;font-family:Times New Roman">Feedback</h1>
+<table align="center" style="color:black;font-family: Times New Roman;font-size: large;font-size: larger">
+	<tr><tr>
+    <th></b>Date</th>
+		<td>
+			<input type="Date" name="Date" placeholder="Date" required class="form-control" > <br>
+		</td>
+	</tr></tr>
+	<tr><tr>
+		<th> Description</th>
+		<td>
+			<input type="text" name="Description" placeholder="Description" required class="form-control" > <br>
+		</td>
+	</tr></tr>
+	
+	
+	<tr><tr>
+		<td></td>
+		<td><input type="submit" name="" value="Send" class="btn btn-success"></td>
+	</tr></tr>
+	</table>
+
+</form>
+{% endblock %}
