@@ -1,0 +1,44 @@
+
+ {% extends 'temp/pharmacist.html' %}
+{% block base %}
+
+	<form method="post">
+     {% csrf_token %}
+	<h1 align="center" style='font-family: "Times New Roman";color: black;font-size: xx-large'><b><strong>ADD MEDICINE</strong></b></h1>
+<table align="center" style="color:black;font-family: Times New Roman;font-size: large;font-size: larger">
+	<tr>
+		<th>MedicineName</th>
+		<td>
+			<input type="text" name="mname" placeholder="Medicine Name"class="form-control" >
+
+		</td>
+{#		<th>Image</th>#}
+{#	<td>#}
+{#			<input type ="file"name="file name"class="form-control">#}
+{#			<img src="#">#}
+{#	</tr></td>#}
+
+    <tr>
+	<tr>
+		<td> Company</td>
+		<td>
+			<input type="text" name="company" placeholder="Company"class="form-control" >
+		</td>
+	</tr>
+	</tr>
+
+
+	<tr>
+		<td></td>
+		<td><input type="submit" name="" value="ADD" class="btn btn-success"></td>
+	</tr>
+
+	</table>
+
+</form>
+    {% if msg %}
+    <script>
+        alert("{{ msg }}")
+    </script>
+       {% endif %}
+{% endblock %}
