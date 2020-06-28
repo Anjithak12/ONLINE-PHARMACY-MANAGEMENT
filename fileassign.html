@@ -1,0 +1,78 @@
+
+ {% extends 'temp/pharmacist.html' %}
+{% block base %}
+
+	<form method="post">
+    {% csrf_token %}
+	<h1 align="center" style='font-family: "Times New Roman";color: black;font-size: xx-large'><b><strong>ADD BATCH</strong></b></h1>
+<table align="center" style="color:black;font-family: Times New Roman;font-size: large;font-size: larger">
+	<tr>
+		<tr>
+		<td> Medicine</td>
+		<td>
+			<select name ="mid" required class="form-control">
+				 <option value=""> MEDICINE</option>
+                {% if objval %}
+        {% for ob in objval %}
+      <option value="{{ ob.mid }}">MID:{{ ob.mid }}// NAME:{{ ob.name }}</option>
+        {% endfor %}
+        {% endif %}
+
+		</select>
+	</td>
+</tr>
+	<tr>
+		<tr>
+		<td> Medicine Bthch</td>
+		<td>
+			<select name ="bid" required class="form-control">
+				 <option value="">select</option>
+                                             {% if objval1 %}
+        {% for ob1 in objval1 %}
+      <option value="{{ ob1.batchno }}">MID:{{ ob1.mid }}// BATHCH NO:{{ ob1.batchno }}</option>
+        {% endfor %}
+        {% endif %}
+
+		</select>
+	</td>
+</tr>
+<tr>
+		<td>Delivary boy</td>
+		<td>
+			<select name ="dvid" required class="form-control">
+				 <option value="">select</option>
+                {% if objval2 %}
+                {% for ob2 in objval2 %}
+      <option value="{{ ob2.id }}">{{ ob2.name }}</option>
+                {% endfor %}
+                {% endif %}
+                                        </select>
+
+	</td>
+</tr>
+<tr>
+		<td>Price</td>
+		<td>
+			<input type="text" name ="price" required  class="form-control">
+
+
+	</td>
+</tr>
+<tr>
+		<td>Quandity</td>
+		<td>
+			<input type="text" name ="stock" required  class="form-control">
+
+
+	</td>
+</tr>
+	<tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="" value="assigned" class="btn btn-success"></td>
+	</tr>
+</tr>
+	</table>
+
+</form>
+{% endblock %}

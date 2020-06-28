@@ -1,0 +1,35 @@
+
+ {% extends 'temp/pharmacist.html' %}
+{% block base %}
+
+	<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+	<h1 align="center" style='font-family: "Times New Roman";color: black;font-size: xx-large'><b><strong>Chat</strong></b></h1>
+<table align="center" style="color:black;font-family: Times New Roman;font-size: large;font-size: larger">
+
+<tr>
+		<td>Chat</td>
+		<td>
+            <textarea name ="chat" required  class="form-control"></textarea>
+
+
+	</td>
+{#    <td>#}
+{#            <select name ="tp"   class="form-control">#}
+{#                <option value="">select</option>#}
+{#                 <option value="out_of_stock">out of stock all medicines</option>#}
+{#            </select>#}
+{##}
+{##}
+{#	</td>#}
+</tr>
+	<tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="" value="SEND" class="btn btn-success"></td>
+	</tr>
+</tr>
+	</table>
+
+</form>
+{% endblock %}

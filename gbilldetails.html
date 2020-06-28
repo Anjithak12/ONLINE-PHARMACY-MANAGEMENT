@@ -1,0 +1,52 @@
+ {% extends 'temp/admin.html' %}
+{% block base %}
+<form method ="post">
+{% csrf_token %}
+	<h1 align="center" style="font-family: 'Times New Roman'">BILL DETALS</h1>
+	<table align="center"style="column-rule-style: ridge;color: black" class="table-bordered"bgcolor="#f08080">
+<tr>
+		<td>fdt</td>
+		<td>
+			<input type="date" name ="fdt" required  class="form-control">
+
+
+	</td>
+    <td>tdt</td>
+		<td>
+			<input type="date" name ="tdt" required  class="form-control">
+
+
+	</td>
+</tr>
+	<tr>
+	<tr>
+		<td></td>
+		<td><input type="submit" name="" value="UPLOAD" class="btn btn-success"></td>
+	</tr>
+</tr>
+
+         {% if objval %}
+
+              <tr>
+
+           <th style="color: darkred">MID</th>
+
+        <th style="color: darkred">QUANDITY</th>
+              <th style="color: darkred">PRICE</th>
+         <th style="color: darkred">ORDER_DATE</th>
+
+		</tr>
+
+        {% for obj in objval %}
+        <tr>
+            <td>{{ obj.med_id }}</td>
+            <td>{{ obj.quandity}}</td>
+            <td>{{ obj.price}}</td>
+            <td>{{ obj.order_date}}</td>
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+	</table>
+</form>
+{% endblock %}

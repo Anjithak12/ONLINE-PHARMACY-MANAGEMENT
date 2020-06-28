@@ -1,0 +1,42 @@
+ {% extends 'temp/user.html' %}
+{% block base %}
+<form method ="post">
+	<h1 align="center" style="font-family: 'Times New Roman'">BILL DETALS</h1>
+	<table align="center"style="column-rule-style: ridge;color: black" class="table-bordered"bgcolor="#f08080">
+<tr>
+    <tr>
+
+           <th style="color: darkred">MID</th>
+			<th style="color: darkred">NAME</th>
+            <th style="color: darkred">COMPANY</th>
+			<th style="color: darkred">USER_NAME</th>
+            <th style="color: darkred">E-MAIL</th>
+             <th style="color: darkred">CONTACT_NO</th>
+         <th style="color: darkred">ADDRESS</th>
+        <th style="color: darkred">QUANDITY</th>
+              <th style="color: darkred">PRICE</th>
+         <th style="color: darkred">ORDER_DATE</th>
+
+		</tr>
+         {% if objval %}
+        {% for obj in objval %}
+        <tr>
+            <td>{{ obj.0 }}</td>
+            <td>{{ obj.1 }}</td>
+            <td>{{ obj.2 }}</td>
+
+            <td>{{ obj.4 }}</td>
+            <td>{{ obj.5 }}</td>
+            <td>{{ obj.6 }}</td>
+            <td>{{ obj.7 }}</td>
+            <td>{{ obj.12}}</td>
+            <td>{{ obj.13}}</td>
+            <td>{{ obj.16}}</td>
+
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+	</table>
+</form>
+{% endblock %}

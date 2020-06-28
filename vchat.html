@@ -1,0 +1,38 @@
+ {% extends 'temp/user.html' %}
+{% block base %}
+<form method ="post">
+	<h1 align="center" style="font-family: 'Times New Roman'">View Order</h1>
+	<table align="center"style="column-rule-style: ridge;color: black" class="table-bordered"bgcolor="#f08080">
+<tr>
+    <tr>
+
+			<th style="color: darkred">USER_NAME</th>
+
+         <th style="color: darkred">UPLOAD FILE</th>
+
+
+
+         <th style="color: darkred">Stock Notification</th>
+
+		</tr>
+         {% if objval %}
+        {% for obj in objval %}
+        <tr>
+
+            <td>{{ obj.1 }}</td>
+
+           <td><a href="/static/{{ obj.8 }}/" download>download</a></td>
+{#            <td><embed src="/static/{{ obj.8 }}/" width="100" height="100"></td>#}
+
+
+            <td>{{ obj.13}}</td>
+          <td>{{ obj.18}}</td>
+
+
+        </tr>
+        {% endfor %}
+    {% endif %}
+
+	</table>
+</form>
+{% endblock %}
